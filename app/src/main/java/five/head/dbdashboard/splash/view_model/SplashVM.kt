@@ -24,6 +24,7 @@ class SplashVM(
         }
 
     private fun initUserState() = intent {
+        return@intent postSideEffect(SplashSideEffect.UserIsAuthorized)
         val token = userRepos.getAccessToken()
         if (token == null) {
             postSideEffect(SplashSideEffect.AuthorizationRequired)
