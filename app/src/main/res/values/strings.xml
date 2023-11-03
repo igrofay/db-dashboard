@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DB dashboard</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="login_via_telegram">"Войти через телеграм "</string>
 </resources>
