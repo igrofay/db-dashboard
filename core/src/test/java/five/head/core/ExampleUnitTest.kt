@@ -1,5 +1,6 @@
 package five.head.core
 
+import five.head.core.domain.utils.FixedList
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +13,15 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val s = FixedList<Int>(4)
+        s.add(1)
+        s.add(2)
+        s.add(3)
+        s.add(4)
+        val list = s.map(
+            transform = { it.toString() },
+            transformWhenNull = { "9999" }
+        )
+        println(list)
     }
 }

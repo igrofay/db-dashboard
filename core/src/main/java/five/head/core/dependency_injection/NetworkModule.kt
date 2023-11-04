@@ -1,6 +1,8 @@
 package five.head.core.dependency_injection
 
 import android.util.Log
+import five.head.core.data.data_source.network.AnalyticsApi
+import five.head.core.data.data_source.network.AuthApi
 import five.head.core.domain.repos.UserRepos
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
@@ -16,6 +18,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.kodein.di.DI
 import org.kodein.di.bindConstant
+import org.kodein.di.bindProvider
 import org.kodein.di.bindSingleton
 import org.kodein.di.instance
 
@@ -24,7 +27,7 @@ internal const val AUTHORIZED_CLIENT = "AUTHORIZED_CLIENT"
 const val URL_SERVER = "URL_SERVER"
 
 internal val NetworkModule by DI.Module {
-    bindConstant(URL_SERVER) { "https://5068-95-183-29-249.ngrok-free.app/" }
+    bindConstant(URL_SERVER) { "http://192.168.0.101" }
     bindSingleton(BASE_CLIENT) {
         httpClient(instance(URL_SERVER))
             .apply {
@@ -53,6 +56,12 @@ internal val NetworkModule by DI.Module {
                     }
                 }
             }
+    }
+    bindProvider {
+        AnalyticsApi(instance(BASE_CLIENT))
+    }
+    bindProvider {
+        AuthApi(instance(BASE_CLIENT))
     }
 }
 

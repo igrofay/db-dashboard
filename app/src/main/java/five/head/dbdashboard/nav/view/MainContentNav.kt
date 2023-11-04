@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import five.head.dbdashboard.nav.model.MainContentRouting
+import five.head.dbdashboard.statistic.view.StatisticScreen
 
 @Composable
 fun MainContentNav(appNavController: NavController) {
@@ -33,7 +34,7 @@ fun MainContentNav(appNavController: NavController) {
 
             }
             composable(MainContentRouting.Statistic.route){
-
+                StatisticScreen()
             }
             composable(MainContentRouting.Profile.route){
 

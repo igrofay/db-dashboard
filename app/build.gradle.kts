@@ -66,4 +66,6 @@ dependencies {
     implementation("org.kodein.di:kodein-di-framework-compose:7.19.0")
     // Orbit-MVI
     implementation("org.orbit-mvi:orbit-compose:6.1.0")
+    // Vico
+    implementation("com.patrykandpatrick.vico:compose:1.12.0")
 }

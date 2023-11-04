@@ -29,6 +29,6 @@ sealed class MainContentRouting(route: String, override val icon: Int, override 
 
     companion object {
         const val route = "main_content_routing"
-        val items by lazy { listOf<BottomNavItem>(Notification, Statistic, Profile) }
+        val items by lazy { listOf<BottomNavItem>(Notification, Statistic,) }
     }
 }

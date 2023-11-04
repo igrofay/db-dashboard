@@ -42,7 +42,7 @@ fun AppBar(
             painter = icon,
             contentDescription = null,
             modifier = Modifier
-                .size(22.dp)
+                .size(24.dp)
         )
         Text(
             text = label,

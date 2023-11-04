@@ -5,4 +5,11 @@
     <string name="notifications">Уведомления</string>
     <string name="statistics">Статистика</string>
     <string name="profile">Профиль</string>
+    <string name="analytics">Аналитика</string>
+    <string name="byte1">Байт</string>
+    <string name="database">База данных</string>
+    <string name="with_size">с размером</string>
+    <string name="table">таблица</string>
+    <string name="cpu_load">Загруженность процессора</string>
+    <string name="ram_load">Нагруженность ОЗУ</string>
 </resources>
