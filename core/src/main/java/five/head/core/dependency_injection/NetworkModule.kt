@@ -3,6 +3,7 @@ package five.head.core.dependency_injection
 import android.util.Log
 import five.head.core.data.data_source.network.AnalyticsApi
 import five.head.core.data.data_source.network.AuthApi
+import five.head.core.data.data_source.network.NotificationApi
 import five.head.core.domain.repos.UserRepos
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
@@ -62,6 +63,9 @@ internal val NetworkModule by DI.Module {
     }
     bindProvider {
         AuthApi(instance(BASE_CLIENT))
+    }
+    bindProvider {
+        NotificationApi(instance(BASE_CLIENT))
     }
 }
 

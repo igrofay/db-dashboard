@@ -17,10 +17,15 @@
     <string name="disk">Диск</string>
     <string name="disk_size_and_busy">%1$s c размером %2\$d GB, где занято %3\$d GB</string>
     <string name="requests">Запросы</string>
+    <string name="error_name">Имя ошибки</string>
+    <string name="error_time">Время ошибки</string>
     <string name="query_text">Текст запроса</string>
     <string name="query_count">Количество запросов</string>
     <string name="max_query_duration">Максимальная продолжительность запроса</string>
     <string name="user_name">Имя пользователя</string>
     <string name="session_count">Количество сеансов</string>
     <string name="sessions">Сессии</string>
+    <string name="crashes_in_database">Сбой в базе данных</string>
+    <string name="notifications_will_notify_you_about_failures_in_database">Уведомления оповестят вас о сбоях в базе данных</string>
+    <string name="solutions">Решения</string>
 </resources>

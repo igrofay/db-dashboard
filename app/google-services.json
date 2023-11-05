@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142507459521",
+    "project_id": "db-dashboard-2eec5",
+    "storage_bucket": "db-dashboard-2eec5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142507459521:android:7e8b56c2b96874b3126540",
+        "android_client_info": {
+          "package_name": "five.head.dbdashboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmXfeEa08ykTPOfMzNeUcddJ3azHa4TjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

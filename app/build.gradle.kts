@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -68,4 +69,7 @@ dependencies {
     implementation("org.orbit-mvi:orbit-compose:6.1.0")
     // Vico
     implementation("com.patrykandpatrick.vico:compose:1.12.0")
+    // firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation("com.google.firebase:firebase-messaging")
 }

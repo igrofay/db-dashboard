@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -30,8 +31,8 @@ fun QueriesToDBView(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
-        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 15.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 15.dp)
     ){
         items(queries){
             QueriesToDBItem(item = it)
@@ -45,8 +46,7 @@ private fun QueriesToDBItem(
 ) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
+            .fillMaxWidth(),
         elevation = 2.dp,
         shape = MaterialTheme.shapes.small
     ) {
@@ -59,10 +59,12 @@ private fun QueriesToDBItem(
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp
             )
-            Text(
-                text = item.queryText,
-                fontSize = 16.sp,
-            )
+            SelectionContainer {
+                Text(
+                    text = item.queryText,
+                    fontSize = 16.sp,
+                )
+            }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = "${stringResource(R.string.query_count)}:",

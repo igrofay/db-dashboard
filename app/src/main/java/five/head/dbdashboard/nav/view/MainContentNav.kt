@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import five.head.dbdashboard.nav.model.MainContentRouting
+import five.head.dbdashboard.notification.view.NotificationScreen
 import five.head.dbdashboard.requests_to_db.view.RequestsToDBScreen
 import five.head.dbdashboard.statistic.view.StatisticScreen
 
@@ -32,7 +33,7 @@ fun MainContentNav(appNavController: NavController) {
                 .fillMaxSize()
         ) {
             composable(MainContentRouting.Notification.route){
-
+                NotificationScreen()
             }
             composable(MainContentRouting.Statistic.route){
                 StatisticScreen()

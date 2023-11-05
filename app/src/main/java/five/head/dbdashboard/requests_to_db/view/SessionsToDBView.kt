@@ -29,8 +29,8 @@ fun SessionsToDBView(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
-        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 15.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 15.dp)
     ){
         items(session){
             SessionsToDBItem(item = it)
@@ -42,8 +42,7 @@ fun SessionsToDBView(
 private fun SessionsToDBItem(item: SessionToDBModel) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
+            .fillMaxWidth(),
         elevation = 2.dp,
         shape = MaterialTheme.shapes.small
     ) {
