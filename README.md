@@ -44,7 +44,7 @@
 
 1. Запустите Android Studio.
 2. Слева будут отображены файлы нужно найти Core и открыть
-![img.png](im_res%2Fimg.png)
+![img_0.png](im_res%2Fimg_0.png)
 
 ## Шаг 2: Найдите DI пакет 
 
