@@ -53,7 +53,7 @@
 
 ## Шаг 3: Поменяйте DI константу
 
-1. Найдите 31 строчку кода в [NetworkModule.kt](core%2Fsrc%2Fmain%2Fjava%2Ffive%2Fhead%2Fcore%2Fdependency_injection%2FNetworkModule.kt)
+1. Найдите 30 строчку кода в [NetworkModule.kt](core%2Fsrc%2Fmain%2Fjava%2Ffive%2Fhead%2Fcore%2Fdependency_injection%2FNetworkModule.kt)
 2. Поменяйте стринговое значение на ваш URL
 ![img_1.png](im_res%2Fimg_1.png)
 
