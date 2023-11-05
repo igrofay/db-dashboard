@@ -20,11 +20,11 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 
 class StatisticVM(
     override val di: DI
-) : AppVM<StatisticState, StatisticSideEffect, StatisticEvent>(),DIAware {
+) : AppVM<StatisticState, StatisticSideEffect, StatisticEvent>(), DIAware {
     private val statisticRepos by di.instance<StatisticRepos>()
 
     override val container: Container<StatisticState, StatisticSideEffect> = viewModelScope
-        .container(StatisticState()){
+        .container(StatisticState()) {
             loadData()
         }
 
@@ -33,7 +33,7 @@ class StatisticVM(
 
     private fun loadData() = intent(false) {
         coroutineScope {
-            while (true){
+            while (true) {
                 async {
                     statisticRepos.getDatabaseInfo().onSuccess { data ->
                         reduce { state.copy(databaseInfo = data) }
@@ -41,13 +41,23 @@ class StatisticVM(
                 }.start()
                 async {
                     statisticRepos.getHardwareLoad().onSuccess { data ->
-                        reduce { state.copy(cpuUsagePercentage = data.cpuUsagePercentage) }
+                        reduce {
+                            state.copy(
+                                cpuUsagePercentage = data
+                                    .cpuUsagePercentage,
+                                ramLoad = state
+                                    .ramLoad.add(data.maxRamSizeMb - data.availableRamMb),
+                                maxRamSizeMb = data.maxRamSizeMb,
+                                driveUsages = data.driveUsages
+                            )
+                        }
                     }.onFailure(::onError)
                 }.start()
-                delay(15_000)
+                delay(5_000)
             }
         }
     }
+
     override fun onError(er: Throwable) {
         Log.e("StatisticVM", er.message.toString())
     }

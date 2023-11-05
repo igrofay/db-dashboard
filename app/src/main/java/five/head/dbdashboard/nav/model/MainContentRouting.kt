@@ -26,9 +26,14 @@ sealed class MainContentRouting(route: String, override val icon: Int, override 
             R.drawable.ic_profile,
             R.string.profile
         )
+    data object RequestsToDB : MainContentRouting(
+        "${route}_requests_to_db",
+        R.drawable.ic_request,
+        R.string.requests
+    )
 
     companion object {
         const val route = "main_content_routing"
-        val items by lazy { listOf<BottomNavItem>(Notification, Statistic,) }
+        val items by lazy { listOf<BottomNavItem>(Notification, Statistic, RequestsToDB) }
     }
 }

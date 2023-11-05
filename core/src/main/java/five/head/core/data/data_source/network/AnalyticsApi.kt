@@ -10,4 +10,8 @@ internal class AnalyticsApi(
         .get("/api/analytics/databaseInfo")
     suspend fun getHardwareLoad() = authClient
         .get("/api/analytics/hardware")
+    suspend fun getQueriesToDB() = authClient
+        .get("/api/analytics/queries")
+    suspend fun getSessionsToDB() = authClient
+        .get("/api/analytics/sessions")
 }
